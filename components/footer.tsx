@@ -3,17 +3,10 @@ import { useMemo, type CSSProperties } from "react";
 
 export type FooterType = {
   /** Style props */
-  propDebugCommit?: CSSProperties["debugCommit"];
   propPadding?: CSSProperties["padding"];
 };
 
-const Footer: NextPage<FooterType> = ({ propDebugCommit, propPadding }) => {
-  const footerStyle: CSSProperties = useMemo(() => {
-    return {
-      debugCommit: propDebugCommit,
-    };
-  }, [propDebugCommit]);
-
+const Footer: NextPage<FooterType> = ({ propPadding }) => {
   const footerContentStyle: CSSProperties = useMemo(() => {
     return {
       padding: propPadding,
@@ -21,10 +14,7 @@ const Footer: NextPage<FooterType> = ({ propDebugCommit, propPadding }) => {
   }, [propPadding]);
 
   return (
-    <footer
-      className="self-stretch bg-base-black flex flex-col items-center justify-start py-20 px-5 box-border max-w-full text-left text-base text-base-white font-paragraph-p3-regular mq750:gap-[20px] mq450:pt-[52px] mq450:pb-[52px] mq450:box-border"
-      style={footerStyle}
-    >
+    <footer className="self-stretch bg-base-black flex flex-col items-center justify-start py-20 px-5 box-border max-w-full text-left text-base text-base-white font-paragraph-p3-regular mq750:gap-[20px] mq450:pt-[52px] mq450:pb-[52px] mq450:box-border">
       <div className="w-[1140px] flex flex-row items-center justify-between max-w-full gap-[20px] lg:flex-wrap lg:justify-center">
         <div
           className="w-[210px] flex flex-col items-start justify-start gap-[16px]"
